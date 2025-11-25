@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GROW</title>
+  <!-- Add favicon (tab icon) -->
+  <link rel="icon" type="image/png" href="images/rounded logoS.png ">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+  
+</head>
+<body>
+</head>
+<body>
+  
+  <!-- Popup Form -->
+  <div id="popupForm" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2>Get in Touch</h2>
+      <p>Let’s discuss how we can grow your business in the digital space.</p>
+      <form id="contact-form" action="contact.php" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <input type="tel" name="contact" placeholder="Contact No" required>
+  <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+
+
+        <button type="submit">Send Message</button>
+      </form>
+
+
+    </div>
+  </div>
+
+  <script>
+    // Show popup on page load
+    window.onload = function() {
+      document.getElementById("popupForm").classList.add("show");
+    };
+
+    // Close popup
+    function closePopup() {
+      document.getElementById("popupForm").classList.remove("show");
+    }
+
+    // Close when clicking outside form
+    window.onclick = function(event) {
+      const popup = document.getElementById("popupForm");
+      if (event.target === popup) {
+        closePopup();
+      }
+    }
+  </script>
+  <!-- WhatsApp Button -->
+<a href="" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm" data-aos="fade-down">
+  <div class="container">
+    <!-- Logo + Title -->
+    <a class="navbar-brand brand-title d-flex align-items-center" href="/kdm/kdm/kdm.html">
+      <img src="images/rounded logoS.png" alt="Logo" class="brand-logo">
+      <span class="brand-name">GROW </span>
+      
+     <div class="tap-arrow-wrap">
+    <div class="curly-arrow"></div>
+    <span class="tap-text">Tap Me</span>
+    <div class="tiny-arrow"></div>
+</div>
+
+
+
+      
+    </a>
+
+   <button class="navbar-toggler collapsed" type="button" 
+    data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="toggler-icon top-bar"></span>
+  <span class="toggler-icon middle-bar"></span>
+  <span class="toggler-icon bottom-bar"></span>
+</button>
+
+
+<div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+    <li class="nav-item"><a class="nav-link" href="/plans.html">Pricing</a></li>
+  </ul>
+  <a href="#contact" class="btn btn-contact ms-3">Contact</a>
+</div>
+
+  </div>
+</nav>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    const navbarCollapse = document.getElementById("navbarNav");
+    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+
+    // Close menu when clicking a nav link
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (navbarCollapse.classList.contains("show")) {
+          bsCollapse.hide();
+        }
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+      const isClickInside = navbarCollapse.contains(event.target) || event.target.closest(".navbar-toggler");
+      if (!isClickInside && navbarCollapse.classList.contains("show")) {
+        bsCollapse.hide();
+      }
+    });
+  });
+</script>
+
+<!-- Floating Offer Button (next to WhatsApp button) -->
+<button class="offer-fab" id="openOfferBtn">
+  🎉 Offers
+</button>
+
+<!-- Overlay -->
+<div class="offer-overlay" id="offerOverlay"></div>
+
+<!-- Slide-in Offer Drawer -->
+<div class="offer-panel" id="offerPanel">
+  <div class="offer-header">
+    <span>🔥 Our Special Offers</span>
+    <span class="offer-close" id="offerClose">&times;</span>
+  </div>
+  <div class="offer-body">
+
+    <!-- Offer Card 1 -->
+    <div class="offer-card fade-in">
+      <h5>📞 Free Strategy Call</h5>
+      <p>Get a <strong>30-min FREE consultation</strong> with our experts.</p>
+      <button class="btn w-100 offer-btn">Claim Now</button>
+    </div>
+
+    <!-- Offer Card 2 -->
+    <div class="offer-card fade-in">
+      <h5>💸 20% Off First Campaign</h5>
+      <p>Enjoy <strong>20% discount</strong> on your very first marketing campaign.</p>
+      <button class="btn w-100 offer-btn">Grab Offer</button>
+    </div>
+
+    <!-- Offer Card 3 -->
+    <div class="offer-card fade-in">
+      <h5>📊 Free SEO Audit</h5>
+      <p>Get a detailed <strong>SEO audit report</strong> of your website at no cost.</p>
+      <button class="btn w-100 offer-btn">Get Report</button>
+    </div>
+
+  </div>
+</div>
+<script>
+  const offerPanel = document.getElementById("offerPanel");
+  const offerOverlay = document.getElementById("offerOverlay");
+  const openOfferBtn = document.getElementById("openOfferBtn");
+  const offerClose = document.getElementById("offerClose");
+  const offerBody = document.querySelector(".offer-body");
+
+  // Fetch offers from JSON file
+  fetch("/data/offers.json")
+    .then(res => res.json())
+    .then(offers => {
+      offerBody.innerHTML = ""; // Clear existing
+
+      offers.forEach((offer, i) => {
+        const card = document.createElement("div");
+        card.classList.add("offer-card", "fade-in");
+
+        card.innerHTML = `
+          <h5>${offer.icon} ${offer.title}</h5>
+          <p>${offer.description}</p>
+          <a href="${offer.link}" target="_blank">
+            <button class="btn w-100 offer-btn">${offer.button}</button>
+          </a>
+        `;
+
+        offerBody.appendChild(card);
+      });
+    })
+    .catch(err => {
+      console.error("Error loading offers:", err);
+      offerBody.innerHTML = "<p>⚠️ Could not load offers.</p>";
+    });
+
+  // Open
+  openOfferBtn.addEventListener("click", () => {
+    offerPanel.classList.add("show");
+    offerOverlay.classList.add("show");
+
+    const offerCards = document.querySelectorAll(".offer-card");
+    offerCards.forEach((card, i) => {
+      setTimeout(() => {
+        card.classList.add("show");
+      }, i * 150);
+    });
+  });
+
+  // Close
+  offerClose.addEventListener("click", closeOffer);
+  offerOverlay.addEventListener("click", closeOffer);
+
+  function closeOffer() {
+    offerPanel.classList.remove("show");
+    offerOverlay.classList.remove("show");
+    const offerCards = document.querySelectorAll(".offer-card");
+    offerCards.forEach(card => card.classList.remove("show"));
+  }
+</script>
+
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+      <!-- Left: Text -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <p class="text-primary fw-bold">Digital Marketing Agency</p>
+        <h1 class="hero-title">We Drive <span>Ideas</span><br> Into Impact</h1>
+        <p>We stay ahead of trends and tech to keep your campaigns future-ready.</p>
+
+        <div class="d-flex gap-3 mb-4">
+          <a href="#contact" class="btn btn-primary-custom">Stay Together</a>
+          <a href="#services" class="btn btn-outline-custom">Explore Services</a>
+        </div>
+
+        <!-- Counters -->
+<div class="row">
+  <div class="col-4" data-aos="zoom-in" data-aos-delay="100">
+    <div class="counter-box">
+      <h3><span class="counter" data-target="150">0</span>+</h3>
+      <p>Strategy sprints</p>
+    </div>
+  </div>
+  <div class="col-4" data-aos="zoom-in" data-aos-delay="200">
+    <div class="counter-box">
+      <h3><span class="counter" data-target="200">0</span>+</h3>
+      <p>Campaigns done</p>
+    </div>
+  </div>
+  <div class="col-4" data-aos="zoom-in" data-aos-delay="300">
+    <div class="counter-box">
+      <h3><span class="counter" data-target="95">0</span>%</h3>
+      <p>Client success</p>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+      <!-- Right: Image -->
+      <div class="col-lg-6 text-center" data-aos="fade-left">
+        <div class="hero-img-wrapper">
+          <img src="images/hreo1.png" alt="Hero Image" class="hero-img">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll(".counter");
+
+  const startCount = (counter) => {
+    const target = +counter.getAttribute("data-target");
+    const duration = 2000; // total time (ms)
+    const stepTime = Math.max(Math.floor(duration / target), 20); 
+
+    let current = 0;
+    clearInterval(counter._interval); // reset if already running
+
+    counter._interval = setInterval(() => {
+      current += 1;
+      counter.textContent = current;
+      if (current >= target) {
+        clearInterval(counter._interval);
+      }
+    }, stepTime);
+  };
+
+  // Observer that re-triggers every time counters are visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startCount(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => observer.observe(counter));
+});
+</script>
+
+ <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Scrolling Strip Loop</title> <style> body { margin: 0; font-family: Arial, sans-serif; } /* Orange strip */ .scroll-strip { background: #0033cc; /* Changed to your requested blue */ color: #fff; font-weight: 600; overflow: hidden; white-space: nowrap; position: relative; padding: 15px 0; } /* Inner container for looping */ .scroll-strip .inner { display: flex; width: max-content; animation: marquee 20s linear infinite; } /* Track items */ .scroll-strip span { margin: 0 40px; font-size: 18px; position: relative; } /* Star separator */ .scroll-strip span::after { content: "✶"; margin-left: 40px; color: #fff; font-weight: bold; } /* Marquee keyframes */ @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } } </style> </head> <body> <div class="scroll-strip"> <div class="inner"> <!-- First Track -->
+    <span>SEO</span>
+    <span>Social Media</span>
+    <span>Google Ads</span>
+    <span>Brand Strategy</span>
+    <span>Content Marketing</span>
+    <span>Email Marketing</span>
+    <span>Influencer Marketing</span>
+    <span>Video Campaigns</span>
+    <span>Analytics</span>
+    <span>Lead Generation</span>
+
+    <!-- Duplicate Track for seamless loop -->
+    <span>SEO</span>
+    <span>Social Media</span>
+    <span>Google Ads</span>
+    <span>Brand Strategy</span>
+    <span>Content Marketing</span>
+    <span>Email Marketing</span>
+    <span>Influencer Marketing</span>
+    <span>Video Campaigns</span>
+    <span>Analytics</span>
+    <span>Lead Generation</span>
+  </div>
+</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="about-left-image  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="images/about.png" alt="">
+              </div>
+            </div>
+            <div  id=about class="col-lg-6 align-self-center  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+              <div class="about-right-content">
+                <div class="section-heading">
+                  <h6 class="about-subtitle">About Us</h6>
+                  <h4>Who <span class="highlight-orange">We Are</span></h4>
+
+                  <div class="line-dec"></div>
+                </div>
+                <p>We are GROW — a team that transforms creativity and strategy into measurable success for your brand.We help <a rel="nofollow" href="http://paypal.me/templatemo" target="_blank">Businesses </a>thrive in the digital space with a team of creative strategists, designers, and marketers who craft data-driven campaigns to boost visibility, spark engagement, and drive conversions With expertise in <a href="https://templatemo.com/contact" target="_blank">SEO, social media marketing, paid ads, content creation, and web design,</a>we deliver tailored solutions built around your unique goals. Whether you’re a startup or an established brand, we make your online presence stronger than ever.</p>
+                
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="90">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            90%<br>
+                            <span>Content</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            80%<br>
+                            <span>Traffic</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            80%<br>
+                            <span>Conversion</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("#about, #testimonials");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(sec => observer.observe(sec));
+  });
+</script>
+
+<!-- ✅ Services Section (Added under Hero) -->
+<section id = services class="services-section">
+  <h2>Our <span class="highlight-orange">Services</span></h2>
+
+  <div class="services-container">
+    <div  class="service-card">
+      <div class="paperclip"></div>
+      <img src="images/SEO icon.jpeg.jpg" alt="SEO Icon">
+      <h3>Search Engine Optimization</h3>
+       <a href="plans.html#seo-plans" class="plan-btn">Plans</a>
+    </div>
+
+    <div class="service-card">
+      <div class="paperclip"></div>
+      <img src="images/social media.png" alt="Social Media">
+      <h3>Social Media Handling</h3>
+      <a href="plans.html#socialmedia-plans" class="plan-btn">Plans</a>
+    </div>
+
+    <div class="service-card">
+      <div class="paperclip"></div>
+      <img src="images/google ads.png" alt="Ads">
+      <h3>Google/Meta Ads</h3>
+      <a href="plans.html#ads-plans" class="plan-btn">Plans</a>
+    </div>
+
+    <div class="service-card">
+      <div class="paperclip"></div>
+      <img src="images/web.png" alt="Web Design">
+      <h3>Web Design & Development</h3>
+      <a href="plans.html#web-plans" class="plan-btn">Plans</a>
+    </div>
+
+    <div  class="service-card">
+      <div class="paperclip"></div>
+      <img src="images/yotube promotions.png" alt="Promotions">
+      <h3>YouTube Promotions</h3>
+      <a href="/kdm/kdm/kdm.html" class="plan-btn">Plans</a>
+      
+    </div>
+  </div>
+</section>
+<!-- Work Process Section -->
+<section id="work-process" class="work-process">
+  <div class="container">
+
+   <div class="header-row">
+  <div class="left-side">
+    <h5 class="tagline"><span class="dot"></span> Our Work Process</h5>
+    <p class="right">
+      As a digital marketing agency, we focus on creating strategies that drive visibility,
+  engage your target audience, and deliver measurable growth across every platform.
+    </p>
+  </div>
+
+  <div class="title-wrap">
+    <h2 class="main-title">
+      Step-by-Step to <br>
+      <span class="accent">Your Growth</span>
+    </h2>
+  </div>
+</div>
+    <!-- Steps -->
+    <div class="steps">
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-bg">01</div>
+        <h3>Discover & Strategize</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt...</p>
+        <div class="step-footer">
+          <span>STEP</span>
+          <span class="step-number">01</span>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-bg">02</div>
+        <h3>Execute & Optimize</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt...</p>
+        <div class="step-footer">
+          <span>STEP</span>
+          <span class="step-number">02</span>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-bg">03</div>
+        <h3>Analyze & Grow</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt...</p>
+        <div class="step-footer">
+          <span>STEP</span>
+          <span class="step-number">03</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Work Results Section -->
+<section class="work-results-section py-5">
+  <div class="container">
+    <p class="text-center text-muted">Our Work</p>
+    <h2 class="work-results-title text-center">Work That Drives Results</h2>
+    <div class="row g-4" id="work-results-container">
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-6">
+        <div class="work-results-card">
+          <img src="https://via.placeholder.com/600x400" alt="Work 1">
+          <span class="work-results-badge">Social Media Marketing</span>
+          <div class="work-results-body">
+            <h5>A Social Campaign for Real Estate Agency</h5>
+          </div>
+          <div class="work-results-icon">✔</div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-6">
+        <div class="work-results-card">
+          <img src="https://via.placeholder.com/600x400" alt="Work 2">
+          <span class="work-results-badge">SEO & PPC</span>
+          <div class="work-results-body">
+            <h5>Search to Schedule: SEO & PPC for Dental Clinic</h5>
+          </div>
+          <div class="work-results-icon">✔</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-6">
+        <div class="work-results-card">
+          <img src="https://via.placeholder.com/600x400" alt="Work 3">
+          <span class="work-results-badge">Social Media Marketing</span>
+          <div class="work-results-body">
+            <h5>Healthy Clicks: Google Ads for Yoga Studio</h5>
+          </div>
+          <div class="work-results-icon">✔</div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-6">
+        <div class="work-results-card">
+          <img src="https://via.placeholder.com/600x400" alt="Work 4">
+          <span class="work-results-badge">Paid Advertising</span>
+          <div class="work-results-body">
+            <h5>Runway to Revenue: Instagram Ad Campaign for Fashion Brand</h5>
+          </div>
+          <div class="work-results-icon">✔</div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- View All Button -->
+    <button class="work-results-btn">View All Work</button>
+  </div>
+</section>
+<script>
+  fetch("data/work-results.json")
+    .then(res => res.json())
+    .then(works => {
+      const container = document.getElementById("work-results-container");
+      container.innerHTML = "";
+
+      works.forEach(work => {
+        const div = document.createElement("div");
+        div.classList.add("col-md-6", "col-lg-6");
+        div.innerHTML = `
+          <div class="work-results-card">
+            <img src="${work.image}" alt="${work.title}">
+            <span class="work-results-badge">${work.badge}</span>
+            <div class="work-results-body">
+              <h5>${work.title}</h5>
+            </div>
+            <div class="work-results-icon">✔</div>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    })
+    .catch(err => {
+      console.error("Error loading work results:", err);
+      document.getElementById("work-results-container").innerHTML =
+        "<p class='text-danger'>⚠️ Could not load work results.</p>";
+    });
+</script>
+
+
+<!-- ================== TESTIMONIAL SECTION ================== -->
+<section id="testimonials" class="py-4 bg-light">
+  <div class="container">
+    <!-- Section Title -->
+    <h2 class="text-center testimonial-title mb-4">
+      User <span>Testimonials</span>
+    </h2>
+
+    <div class="row g-3">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="testimonial-card h-100">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Jackson">
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <h6>Michael Jackson</h6>
+          <small>CEO of Company</small>
+          <div class="quote">❝</div>
+          <p>Lorem Ipsum is simply dummy text of the Printing industry.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 (Highlighted) -->
+      <div class="col-md-4">
+        <div class="testimonial-card active h-100">
+          <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Parvez Hossein">
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <h6>Parvez Hossein</h6>
+          <small>CEO of Company</small>
+          <div class="quote">❝</div>
+          <p>Lorem Ipsum is simply dummy text of the Printing industry.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="testimonial-card h-100">
+          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Shoikot Hasan">
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <h6>Shoikot Hasan</h6>
+          <small>CEO of Company</small>
+          <div class="quote">❝</div>
+          <p>Lorem Ipsum is simply dummy text of the Printing industry.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================== END TESTIMONIAL SECTION ================== -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const section = document.querySelector("#testimonials");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          section.classList.add("animate"); // trigger animation
+          observer.unobserve(section); // run once
+        }
+      });
+    }, { threshold: 0.3 }); // 30% visible
+
+    observer.observe(section);
+  });
+</script>
+
+<!-- ========== Dependencies (if not already included) ========== -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</section>
+ <section class="project-section">
+    <div class="container">
+      <h1 class="project-title">
+        Let’s <span class="bold">Create</span> an 
+        <span class="highlight">Amazing</span>
+        <span class="highlight-light">Project</span>
+        <span class="bold">Together!</span>
+      </h1>
+
+      <button class="btn">
+        Contact Us Now <span class="circle">➜</span>
+      </button>
+
+      <div class="tags">
+  <span class="tag">SEO Optimization</span>
+  <span class="tag">Social Media Marketing</span>
+  <span class="tag">Content Strategy</span>
+  <span class="tag">Google Ads</span>
+  <span class="tag">Email Marketing</span>
+  <span class="tag">Lead Generation</span>
+  <span class="tag">Brand Awareness</span>
+  <span class="tag">Influencer Marketing</span>
+  <span class="tag">Web Analytics</span>
+</div>
+    </div>
+  </section>
+
+<!-- CONTACT -->
+  <section id="contact" class="container pb-5">
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="card-lite p-4 p-md-5 h-100">
+          <h3 class="fw-bold text-dark mb-3">Let’s talk</h3>
+          <p class="text-secondary">Tell us a bit about your project. We’ll reply within 1 business day.</p>
+
+          <form id="contactForm" action="contact.php" method="POST" novalidate>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" name="name" required>
+      <div class="invalid-feedback">Please enter your name.</div>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" required>
+      <div class="invalid-feedback">Valid email required.</div>
+    </div>
+    <div class="col-12">
+      <label class="form-label">Company</label>
+      <input type="text" class="form-control" name="company" placeholder="Optional">
+    </div>
+    <div class="col-12">
+      <label class="form-label">What do you need?</label>
+      <select class="form-select" name="service" required>
+        <option value="">Choose…</option>
+        <option>Growth strategy</option>
+        <option>Website / Landing page</option>
+        <option>Analytics & KPIs</option>
+        <option>Team enablement</option>
+      </select>
+      <div class="invalid-feedback">Please select an option.</div>
+    </div>
+    <div class="col-12">
+      <label class="form-label">Message</label>
+      <textarea rows="4" class="form-control" name="message" required></textarea>
+      <div class="invalid-feedback">Please add a short message.</div>
+    </div>
+    <div class="col-12 d-grid d-sm-flex gap-3">
+      <button class="btn btn-dg" type="submit"><i class="bi bi-send-fill me-1"></i> Send Message</button>
+      <a class="btn btn-ghost" href="mailto:hello@amanger">Or email us</a>
+    </div>
+  </div>
+</form>
+
+          <div id="formSuccess" class="alert alert-success mt-4 d-none" role="alert">
+            <i class="bi bi-check2-circle me-2"></i>Your message is ready! (Demo) We created a mail with your details.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card-lite p-4 h-100">
+          <h5 class="fw-bold text-dark">Why GROW?</h5>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><i class="bi bi-patch-check-fill text-primary me-2"></i>Proven playbooks for B2B & SaaS</li>
+            <li class="mb-2"><i class="bi bi-patch-check-fill text-primary me-2"></i>Clear roadmaps & ownership</li>
+            <li class="mb-2"><i class="bi bi-patch-check-fill text-primary me-2"></i>Transparent metrics & ROI</li>
+          </ul>
+          <hr>
+          <div class="d-flex align-items-center gap-3">
+            <i class="bi bi-geo-alt-fill fs-4 text-primary"></i>
+            <span class="small text-secondary">Remote worldwide • India-friendly time zones</span>
+          </div>
+          <!-- Map Section -->
+   <div class="map-container mt-3">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11610027404!2d72.74109960235874!3d19.082197839137053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63f6c1ef7d1%3A0xdeb8d30b6f08f3d6!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1695000000000!5m2!1sen!2sin" 
+    class="map-frame"
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
+</div>
+
+    </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3">
+      <div class="d-flex align-items-center gap-2">
+        <img src="images/rounded logoS.png" alt="GROW Logo" 
+       style="width:40px; height:40px; object-fit:contain;">
+        <strong>GROW</strong>
+      </div>
+      <ul class="nav gap-3">
+        <li class="nav-item"><a class="nav-link px-0" href="#about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link px-0" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link px-0" href="/plans.html">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link px-0" href="#contact">Contact</a></li>
+      </ul>
+      <div class="small">© <span id="year"></span> GROW. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar shadow on scroll
+    const nav = document.getElementById('mainNav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
+    window.addEventListener('scroll', onScroll); onScroll();
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form validation + “mailto draft” demo
+    (function(){
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('formSuccess');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        form.classList.add('was-validated');
+        if(!form.checkValidity()) return;
+
+        // Collect values
+        const [name,email,company,need,message] = [
+          form.querySelector('input[type="text"]').value.trim(),
+          form.querySelector('input[type="email"]').value.trim(),
+          form.querySelectorAll('input[type="text"]')[1]?.value.trim() || '',
+          form.querySelector('select').value,
+          form.querySelector('textarea').value.trim()
+        ];
+
+        // Create a mailto draft so it works without a backend:
+        const subject = encodeURIComponent(`Inquiry — ${need} (from ${name})`);
+        const body = encodeURIComponent(
+`Hi GROW,
+
+Name: ${name}
+Email: ${email}
+Company: ${company}
+
+Need: ${need}
+
+Message:
+${message}
+
+— sent from digitalgrow landing`
+        );
+        const mailto = `mailto:hello@digitalgrow.example?subject=${subject}&body=${body}`;
+        window.location.href = mailto;
+
+        success.classList.remove('d-none');
+        form.reset();
+        form.classList.remove('was-validated');
+      }, false);
+    })();
+  </script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+</body>
+</html>

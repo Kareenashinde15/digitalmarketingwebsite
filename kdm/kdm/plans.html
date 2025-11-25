@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Plans - Krishna Digital Growth</title>
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
+  <link rel="stylesheet" href="kdm.css" />
+  <!-- ============== Header ============== -->
+  <header class="header" id="top">
+    <div class="container nav-wrap">
+      <a class="logo" href="/index.html">
+        
+        <img src="kdmimages/kdmlogs.png" alt="" style="height:50px; width:auto; margin-right:8px;">
+        <span class="logo-text">Krishna <b>Digital Media</b></span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="/kdm/kdm/kdm.html#home" class="nav-link active">Home</a>
+        <a href="/kdm/kdm/kdm.html#services" class="nav-link">Services</a>
+        <a href="/kdm/kdm/kdm.html#works" class="nav-link">Works</a>
+        <a href="/kdm/kdm/kdm.html#about" class="nav-link">About</a>
+        <a href="/kdm/kdm/plans.html" class="nav-link">Plans</a>
+        <a href="/kdm/kdm/kdm.html#contact" class="btn btn-dark nav-cta">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <style>
+    /* ===== GLOBAL ===== */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #f9f9f9, #f3f5ff);
+      color: #333;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #ff6a00, #ff8d3b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section-head {
+      text-align: center;
+      padding: 2rem 1rem;
+      animation: fadeDown 1s ease;
+    }
+    .highlight {
+      color: #ff4d6d;
+    }
+    p {
+      margin: 0.5rem 0;
+    }
+
+    /* ===== CONTAINER ===== */
+    .plans {
+      padding: 3rem 1rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      animation: fadeUp 1.2s ease;
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,77,109,0.15), transparent 60%);
+      transform: scale(0);
+      transition: transform 0.6s ease;
+      z-index: 0;
+    }
+    .card:hover::before {
+      transform: scale(1);
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .card p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #ff6a00;
+      margin-top: 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== BUTTON ===== */
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      margin-top: 1rem;
+      background: linear-gradient(90deg, #ff6a00, #fd9b54);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+    .btn::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 200%;
+      height: 200%;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      transition: transform 0.5s ease;
+      z-index: -1;
+    }
+    .btn:hover::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Modal Background */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0; 
+  top: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Box */
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  animation: zoomIn 0.3s ease;
+  max-width: 350px;
+}
+
+/* QR Image */
+.modal-content img {
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* Modal overlay */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+/* Modal card */
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 30px 20px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Close button */
+.close {
+  color: #999;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover {
+  color: #333;
+}
+
+/* QR Image */
+.modal-content img {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  width: 260px; /* adjust size */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Heading */
+.modal-content h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg,#ff4b2b,#8e2de2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+  </style>
+</head>
+<body>
+  <header class="section-head">
+    <h2>Our <span class="highlight">Plans</span></h2>
+    <p>Select the right plan for your growth across platforms.</p>
+  </header>
+<!-- Instagram Growth Plans -->
+<section id="instagram-growth" class="plans">
+  <div class="container">
+    <h2>Instagram Growth Plans</h2>
+    <div class="cards">
+
+      <!-- Followers -->
+      <article class="card">
+        <h3>Followers</h3>
+        <p>✔ 1k Followers = ₹499<br>
+           ✔ 2k Followers = ₹999<br>
+           ✔ 5k Followers = ₹2,299<br>
+           ✔ 10k Followers = ₹3,999<br>
+           ✔ 1 Lac Followers = ₹34,999</p>
+        <a href="" class="btn open-qr" data-qr="images/ig-followers-qr.png" data-plan="Instagram Followers">Get Followers</a>
+      </article>
+
+      <!-- Post Likes -->
+      <article class="card">
+        <h3>Post Likes</h3>
+        <p>✔ 1k Likes = ₹499<br>
+           ✔ 2k Likes = ₹899<br>
+           ✔ 5k Likes = ₹1,499<br>
+           ✔ 10k Likes = ₹2,499<br>
+           ✔ 1 Lac Likes = ₹19,999</p>
+        <a href="#" class="btn open-qr" data-qr="images/ig-likes-qr.png" data-plan="Instagram Post Likes">Buy Likes</a>
+      </article>
+
+      <!-- Reel Views -->
+      <article class="card">
+        <h3>Reel Views</h3>
+        <p>✔ 10k Views = ₹399<br>
+           ✔ 20k Views = ₹799<br>
+           ✔ 1 Lac Views = ₹2,999<br>
+           ✔ 5 Lac Views = ₹4,999<br>
+           ✔ 5M Views = ₹19,999</p>
+        <a href="#" class="btn open-qr" data-qr="images/ig-views-qr.png" data-plan="Instagram Reel Views">Get Views</a>
+      </article>
+
+      <!-- Reel Likes -->
+      <article class="card">
+        <h3>Reel Likes</h3>
+        <p>✔ 1k Likes = ₹499<br>
+           ✔ 2k Likes = ₹899<br>
+           ✔ 5k Likes = ₹1,499<br>
+           ✔ 10k Likes = ₹2,499<br>
+           ✔ 20k Likes = ₹4,999</p>
+        <a href="#" class="btn open-qr" data-qr="images/ig-reel-likes-qr.png" data-plan="Instagram Reel Likes">Buy Reel Likes</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Facebook Growth Plans -->
+<section id="facebook-growth" class="plans">
+  <div class="container">
+    <h2>Facebook Growth Plans</h2>
+    <div class="cards">
+
+      <!-- Followers -->
+      <article class="card">
+        <h3>Followers</h3>
+        <p>✔ 1k Followers = ₹999<br>
+           ✔ 5k Followers = ₹3,999<br>
+           ✔ 10k Followers = ₹7,499<br>
+           ✔ 50k Followers = ₹29,999<br>
+           ✔ 1 Lac Followers = ₹54,999</p>
+        <a href="#" class="btn open-qr" data-qr="images/fb-followers-qr.png" data-plan="Facebook Followers">Get Followers</a>
+      </article>
+
+      <!-- Views -->
+      <article class="card">
+        <h3>Views</h3>
+        <p>✔ 5k+ Views = ₹1,199<br>
+           ✔ 10k+ Views = ₹2,399<br>
+           ✔ 50k+ Views = ₹5,999<br>
+           ✔ 1 Lac+ Views = ₹11,999<br>
+           ✔ 5 Lac+ Views = ₹49,999</p>
+        <a href="#" class="btn open-qr" data-qr="images/fb-views-qr.png" data-plan="Facebook Views">Buy Views</a>
+      </article>
+
+      <!-- Likes -->
+      <article class="card">
+        <h3>Likes</h3>
+        <p>✔ 5k+ Likes = ₹499<br>
+           ✔ 10k+ Likes = ₹899<br>
+           ✔ 20k+ Likes = ₹1,799<br>
+           ✔ 50k+ Likes = ₹4,499<br>
+           ✔ 1 Lac+ Likes = ₹7,999</p>
+        <a href="#" class="btn open-qr" data-qr="images/fb-likes-qr.png" data-plan="Facebook Likes">Buy Likes</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+ <!-- YouTube Growth Plans -->
+<section id="youtube-growth" class="plans">
+  <div class="container">
+    <h2>YouTube Growth Plans</h2>
+    <div class="cards">
+
+      <!-- Subscribers -->
+      <article class="card">
+        <h3>Subscribers</h3>
+        <p>✔ 100 Subscribers = ₹299<br>
+           ✔ 200 Subscribers = ₹599<br>
+           ✔ 500 Subscribers = ₹1,499<br>
+           ✔ 1k Subscribers = ₹2,999<br>
+           ✔ 5k Subscribers = ₹14,999</p>
+        <a href="#" class="btn open-qr" data-qr="images/yt-subscribers-qr.png" data-plan="YouTube Subscribers">Get Subscribers</a>
+      </article>
+
+      <!-- Views -->
+      <article class="card">
+        <h3>Views</h3>
+        <p>✔ 5k+ Views = ₹699<br>
+           ✔ 10k+ Views = ₹1,399<br>
+           ✔ 20k+ Views = ₹2,499<br>
+           ✔ 50k+ Views = ₹5,499<br>
+           ✔ 1 Lac+ Views = ₹10,499<br>
+           ✔ 10 Lac+ Views = ₹80,999</p>
+        <a href="#" class="btn open-qr" data-qr="images/yt-views-qr.png" data-plan="YouTube Views">Buy Views</a>
+      </article>
+
+      <!-- Watchtime Hours -->
+      <article class="card">
+        <h3>Watchtime Hours</h3>
+        <p>✔ 1k Hours = ₹2,999<br>
+           ✔ 2k Hours = ₹5,999<br>
+           ✔ 3k Hours = ₹8,999<br>
+           ✔ 4k Hours = ₹11,999</p>
+        <a href="#" class="btn open-qr" data-qr="images/yt-watchtime-qr.png" data-plan="YouTube Watchtime">Get Watchtime</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- YouTube Revenue Plans -->
+<section id="youtube-revenue" class="plans">
+  <div class="container">
+    <h2>YouTube Revenue Plans</h2>
+    <div class="cards">
+
+      <article class="card">
+        <h3>Revenue Boost</h3>
+        <p>✔ Invest ₹1,000 → Get $18 – $20<br>
+           ✔ Invest ₹5,000 → Get $93 – $95<br>
+           ✔ Invest ₹10,000 → Get $205 – $209</p>
+        <a href="#" class="btn open-qr" data-qr="images/yt-revenue-qr.png" data-plan="YouTube Revenue">Start Earning</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- QR Code Modal -->
+<div id="qrModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Scan to Get Started</h2>
+    <img src="kdmimages/QR code.jpg" alt="QR Code" style="width:200px;">
+  </div>
+</div>
+<script>
+  // Open modal on button click
+  document.querySelectorAll(".open-qr").forEach(btn => {
+    btn.addEventListener("click", function(e) {
+      e.preventDefault();
+      document.getElementById("qrModal").style.display = "flex";
+    });
+  });
+
+  // Close modal when clicking on close button
+  document.querySelector(".close").addEventListener("click", () => {
+    document.getElementById("qrModal").style.display = "none";
+  });
+
+  // Close modal when clicking outside
+  window.onclick = function(event) {
+    if (event.target == document.getElementById("qrModal")) {
+      document.getElementById("qrModal").style.display = "none";
+    }
+  }
+</script>
+<script>
+// Get modal
+const modal = document.getElementById("qrModal");
+const openBtns = document.querySelectorAll(".open-qr");
+const closeBtn = document.querySelector(".close");
+
+// Open modal
+openBtns.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.style.display = "block";
+  });
+});
+
+// Close modal
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close on outside click
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+</script>
+</body>
+</html>

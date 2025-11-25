@@ -1,0 +1,192 @@
+{
+  "seoPlans": [
+    {
+      "title": "Basic SEO",
+      "price": "₹4,999 /mo",
+      "features": [
+        "5 Keywords Optimization",
+        "On-Page SEO",
+        "Monthly Reports",
+        "❌ Link Building"
+      ],
+      "button": "Get Started",
+      "featured": false
+    },
+    {
+      "title": "Standard SEO",
+      "price": "₹9,999 /mo",
+      "features": [
+        "15 Keywords Optimization",
+        "On-Page & Off-Page SEO",
+        "Link Building",
+        "Competitor Analysis"
+      ],
+      "button": "Choose Plan",
+      "featured": true
+    },
+    {
+      "title": "Premium SEO",
+      "price": "₹14,999 /mo",
+      "features": [
+        "30+ Keywords Optimization",
+        "Full SEO Suite",
+        "Weekly Reports",
+        "Dedicated SEO Manager"
+      ],
+      "button": "Go Premium",
+      "featured": false
+    }
+  ],
+  "socialPlans": [
+    {
+      "title": "Basic Social",
+      "price": "₹3,999 /mo",
+      "features": [
+        "2 Platforms Managed",
+        "8 Posts per Month",
+        "Monthly Performance Report",
+        "❌ Paid Ad Support"
+      ],
+      "button": "Get Started",
+      "featured": false
+    },
+    {
+      "title": "Standard Social",
+      "price": "₹7,999 /mo",
+      "features": [
+        "4 Platforms Managed",
+        "15 Posts per Month",
+        "Ad Campaign Setup",
+        "Monthly Strategy Call"
+      ],
+      "button": "Choose Plan",
+      "featured": true
+    },
+    {
+      "title": "Premium Social",
+      "price": "₹12,999 /mo",
+      "features": [
+        "All Major Platforms Managed",
+        "30+ Posts per Month",
+        "Paid Ad Optimization",
+        "Dedicated Social Media Manager"
+      ],
+      "button": "Go Premium",
+      "featured": false
+    }
+  ],
+  "adsPlans": [
+    {
+      "title": "Basic Ads",
+      "price": "₹5,999 /mo",
+      "features": [
+        "Google Ads Setup",
+        "1 Campaign",
+        "Monthly Report",
+        "❌ A/B Testing"
+      ],
+      "button": "Get Started",
+      "featured": false
+    },
+    {
+      "title": "Standard Ads",
+      "price": "₹11,999 /mo",
+      "features": [
+        "Google & Meta Ads",
+        "3 Campaigns",
+        "A/B Testing",
+        "Conversion Tracking"
+      ],
+      "button": "Choose Plan",
+      "featured": true
+    },
+    {
+      "title": "Premium Ads",
+      "price": "₹19,999 /mo",
+      "features": [
+        "Multi-Platform Ads",
+        "Unlimited Campaigns",
+        "Retargeting Ads",
+        "Dedicated Ads Manager"
+      ],
+      "button": "Go Premium",
+      "featured": false
+    }
+  ],
+  "webPlans": [
+    {
+      "title": "Starter Website",
+      "price": "₹9,999",
+      "features": [
+        "3 Pages Website",
+        "Responsive Design",
+        "Basic SEO Setup",
+        "❌ CMS Integration"
+      ],
+      "button": "Get Started",
+      "featured": false
+    },
+    {
+      "title": "Business Website",
+      "price": "₹24,999",
+      "features": [
+        "6-8 Pages Website",
+        "Responsive + Speed Optimized",
+        "CMS Integration",
+        "Basic On-Page SEO"
+      ],
+      "button": "Choose Plan",
+      "featured": true
+    },
+    {
+      "title": "Premium Website",
+      "price": "₹49,999",
+      "features": [
+        "10+ Pages Website",
+        "Advanced UI/UX Design",
+        "E-Commerce Features",
+        "Full SEO Setup"
+      ],
+      "button": "Go Premium",
+      "featured": false
+    }
+  ],
+  "promotionsPlans": [
+    {
+      "title": "Basic Promotion",
+      "price": "₹2,999 /mo",
+      "features": [
+        "1 Campaign",
+        "1 Platform",
+        "Creative Design Support",
+        "❌ Influencer Collab"
+      ],
+      "button": "Get Started",
+      "featured": false
+    },
+    {
+      "title": "Standard Promotion",
+      "price": "₹6,999 /mo",
+      "features": [
+        "3 Campaigns",
+        "2 Platforms",
+        "Creative + Copywriting",
+        "Influencer Collaboration"
+      ],
+      "button": "Choose Plan",
+      "featured": true
+    },
+    {
+      "title": "Premium Promotion",
+      "price": "₹11,999 /mo",
+      "features": [
+        "Unlimited Campaigns",
+        "All Platforms",
+        "Professional Creatives",
+        "Dedicated Promotion Manager"
+      ],
+      "button": "Go Premium",
+      "featured": false
+    }
+  ]
+}

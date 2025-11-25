@@ -1,0 +1,23 @@
+[
+  {
+    "icon": "📞",
+    "title": "Free Strategy Call",
+    "description": "Get a <strong>30-min FREE consultation</strong> with our experts.",
+    "button": "Claim Now",
+    "link": "https://yourwebsite.com/strategy-call"
+  },
+  {
+    "icon": "💸",
+    "title": "20% Off First Campaign",
+    "description": "Enjoy <strong>20% discount</strong> on your very first marketing campaign.",
+    "button": "Grab Offer",
+    "link": "https://yourwebsite.com/discount"
+  },
+  {
+    "icon": "📊",
+    "title": "Free SEO Audit",
+    "description": "Get a detailed <strong>SEO audit report</strong> of your website at no cost.",
+    "button": "Get Report",
+    "link": "https://yourwebsite.com/seo-audit"
+  }
+]

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krishna Digital Media | Marketing Agency</title>
+  <meta name="description" content="Digital Media — We create solutions for your success. SEO/SEM, Social Media, Viral Campaigns, Branding, Web Design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Gloock&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="kdm.css" />
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
+
+  <link rel="icon" type="image/png" href="/kdm/kdm/kdmimages/kdmlogs.png">
+  <script defer src="kdm.js"></script>
+  <script src="https://kit.fontawesome.com/a2e0b6f86e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- ============== Header ============== -->
+  <header class="header" id="top">
+    <div class="container nav-wrap">
+      <a class="logo" href="/index.html">
+        
+        <img src="kdmimages/kdmlogs.png" alt="" style="height:50px; width:auto; margin-right:8px;">
+        <span class="logo-text">Digital <b>Marketing Agency</b></span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#works" class="nav-link">Works</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="/kdm/kdm/plans.html" class="nav-link">Plans</a>
+        <a href="#contact" class="btn btn-dark nav-cta">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+<!-- WhatsApp Button -->
+<a href="" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366; /* WhatsApp Green */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 10000;
+    animation: pulse 2s infinite; /* animation added */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .whatsapp-float img {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Hover bounce */
+  .whatsapp-float:hover {
+    transform: scale(1.15) rotate(5deg);
+    background-color: #1ebe5d;
+  }
+
+  /* Pulse effect */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+    70% {
+      box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+  }
+</style>
+<!-- Floating Offer Button (next to WhatsApp button) -->
+<button class="offer-fab" id="openOfferBtn">
+  🎉 Offers
+</button>
+
+<!-- Overlay -->
+<div class="offer-overlay" id="offerOverlay"></div>
+
+<!-- Slide-in Offer Drawer -->
+<div class="offer-panel" id="offerPanel">
+  <div class="offer-header">
+    <span>🔥 Our Special Offers</span>
+    <span class="offer-close" id="offerClose">&times;</span>
+  </div>
+  <div class="offer-body">
+
+    <!-- Offer Card 1 -->
+    <div class="offer-card fade-in">
+      <h5>📞 Free Strategy Call</h5>
+      <p>Get a <strong>30-min FREE consultation</strong> with our experts.</p>
+      <button class="btn w-100 offer-btn">Claim Now</button>
+    </div>
+
+    <!-- Offer Card 2 -->
+    <div class="offer-card fade-in">
+      <h5>💸 20% Off First Campaign</h5>
+      <p>Enjoy <strong>20% discount</strong> on your very first marketing campaign.</p>
+      <button class="btn w-100 offer-btn">Grab Offer</button>
+    </div>
+
+    <!-- Offer Card 3 -->
+    <div class="offer-card fade-in">
+      <h5>📊 Free SEO Audit</h5>
+      <p>Get a detailed <strong>SEO audit report</strong> of your website at no cost.</p>
+      <button class="btn w-100 offer-btn">Get Report</button>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  /* Floating Offer Button */
+  .offer-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 90px; /* sits beside WhatsApp button */
+    background: #f8f8fa;
+    color: #ff6a00;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 1100;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+  }
+  .offer-fab:hover {
+    background: #ff6a00;
+    color: #f9f9fa;
+    transform: translateY(-3px) scale(1.05);
+  }
+
+  /* Overlay */
+  .offer-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0; visibility: hidden;
+    transition: 0.3s;
+    z-index: 1090;
+  }
+  .offer-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Slide-in Panel */
+  .offer-panel {
+    position: fixed;
+    top: 0; right: -400px;
+    width: 350px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.25);
+    transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px 0 0 15px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .offer-panel.show {
+    right: 0;
+  }
+
+  .offer-header {
+    background: #ff6a00;
+    color: #fff;
+    padding: 18px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px 0 0 0;
+  }
+
+  .offer-close {
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .offer-close:hover { color: #ff6a00; }
+
+  .offer-body {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    font-size: 15px;
+    color: #333;
+  }
+
+  /* Offer Cards */
+  .offer-card {
+    background: #fdfdfd;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .offer-card.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  .offer-card h5 {
+    margin-bottom: 10px;
+    color: #050505;
+    font-weight: 600;
+  }
+  .offer-card p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 12px;
+  }
+
+  /* Claim Buttons */
+  .offer-btn {
+    background: #ff6a00;
+    color: #faf9f9;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  .offer-btn:hover {
+    background: #ff6a00;
+    color: #faf9f9;
+    transform: scale(1.05);
+  }
+</style>
+
+<script>
+  const offerPanel = document.getElementById("offerPanel");
+  const offerOverlay = document.getElementById("offerOverlay");
+  const openOfferBtn = document.getElementById("openOfferBtn");
+  const offerClose = document.getElementById("offerClose");
+  const offerCards = document.querySelectorAll(".offer-card");
+
+  // Open
+  openOfferBtn.addEventListener("click", () => {
+    offerPanel.classList.add("show");
+    offerOverlay.classList.add("show");
+
+    // Animate offer cards one by one
+    offerCards.forEach((card, i) => {
+      setTimeout(() => {
+        card.classList.add("show");
+      }, i * 150);
+    });
+  });
+
+  // Close
+  offerClose.addEventListener("click", closeOffer);
+  offerOverlay.addEventListener("click", closeOffer);
+
+  function closeOffer() {
+    offerPanel.classList.remove("show");
+    offerOverlay.classList.remove("show");
+    offerCards.forEach(card => card.classList.remove("show"));
+  }
+</script>
+
+  <!-- ============== Hero ============== -->
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Marketing Agency</p>
+        <h1>
+  We create <span class="highlight">Solutions</span> for your <span class="changing-words"></span>
+</h1>
+<script>
+const words = ["Success", "Growth", "Brand", "Strategy", "Impact"];
+let i = 0;
+const changingWords = document.querySelector(".changing-words");
+
+function changeWord() {
+  changingWords.textContent = words[i];
+  i = (i + 1) % words.length;
+}
+
+setInterval(changeWord, 2000); // changes every 2s
+changeWord(); // start immediately
+</script>
+        <p class="sub">Our team keeps a keen eye on emerging trends and technologies to ensure your marketing campaigns remain cutting‑edge.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+          <a href="#services" class="btn btn-ghost">See our services</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <!-- Friendly astronaut illustration (royalty-free from undraw) -->
+        <img src="kdmimages/home img.png" alt="Astronaut working on laptop" loading="lazy">
+        <div class="bubble hire">HIRE US</div>
+      </div>
+    </div>
+    <div class="trust marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>SEO/SEM</span><i>•</i><span>Email Marketing</span><i>•</i><span>Influencer Marketing</span><i>•</i>
+        <span>Affiliate Marketing</span><i>•</i><span>Conversion Optimization</span><i>•</i><span>Social Media Promotions</span><i>•</i>
+        <span>Brand Strategy</span><i>•</i><span>Web Design & Dev</span><i>•</i><span>Social Media Handling </span><i>•</i><span>SEO/SEM</span><i>•</i><span>Email Marketing</span><i>•</i><span>Influencer Marketing</span><i>•</i>
+        <span>Affiliate Marketing</span><i>•</i><span>Conversion Optimization</span><i>•</i><span>Social Media Promotions</span><i>•</i>
+        <span>Brand Strategy</span><i>•</i><span>Web Design & Dev</span><i>•</i><span>Social Media Handling </span>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============== Services ============== -->
+  <section id="services" class="section services">
+  <div class="container">
+    <header class="section-head">
+      <h2>We Provide The Best <span class="highlight">Plans</span></h2>
+      <p>Choose the right platform to grow your business revenue.</p>
+    </header>
+
+    <div class="cards">
+      <article class="card">
+        <div class="icon"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram Icon" /></i></div>
+        <h3>Instagram</h3>
+        <p>Boost your reach and engagement with tailored Instagram marketing plans.</p>
+        <a href="/kdm/kdm/plans.html#instagram-growth" class="arrow">Plans <i class="fa-solid fa-circle-arrow-right"></i></a>
+      </article>
+
+      <article class="card">
+        <div class="icon"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook Icon"  /></div>
+        <h3>Facebook</h3>
+        <p>Run high-converting Facebook ad campaigns to drive sales and awareness.</p>
+        <a href="/kdm/kdm/plans.html#facebook-growth" class="arrow">Plans <i class="fa-solid fa-circle-arrow-right"></i></a>
+      </article>
+
+      <article class="card">
+        <div class="icon"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube Icon" /></i></div>
+        <h3>YouTube</h3>
+        <p>Leverage video marketing strategies to grow subscribers and brand visibility.</p>
+        <a href="/kdm/kdm/plans.html#youtube-growth" class="arrow">Plans <i class="fa-solid fa-circle-arrow-right"></i></a>
+      </article>
+
+      <article class="card">
+        <div class="icon"><img src="https://img.icons8.com/ios-filled/50/000000/laptop-coding.png" alt="Dollar Icon (PNG)" /></div>
+        <h3>Website Development </h3>
+        <p>Stunning, responsive websites built to engage, perform, and convert visitors.</p>
+        <a href="/index.html" class="arrow">Plans <i class="fa-solid fa-circle-arrow-right"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <!-- ============== Works (placeholder) ============== -->
+  <section id="works" class="section works">
+    <div class="container">
+      <header class="section-head">
+        <h2>Recent <span class="highlight">Works</span></h2>
+        <p>A quick look at campaigns and websites we shipped.</p>
+      </header>
+      <div class="work-grid">
+        <figure class="work">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" alt="Campaign Analytics Dashboard">
+          <figcaption>Analytics-Driven Campaign</figcaption>
+        </figure>
+        <figure class="work">
+          <img src="kdmimages/Social Media Blitz.jpg" alt="Social Media Campaign">
+          <figcaption>Social Media Blitz</figcaption>
+        </figure>
+        <figure class="work">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200&auto=format&fit=crop" alt="Website design">
+          <figcaption>Modern Web Redesign</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== About ============== -->
+  <section id="about" class="section about">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <h2>Our <span class="highlight">Agency</span></h2>
+        <p>We believe in the power of data. Our analytics‑driven approach allows us to make informed decisions and optimize your marketing efforts for maximum ROI. Let's turn your data into actionable insights and create tailored solutions for your business.</p>
+        <a class="btn btn-dark" href="#contact">Read More</a>
+      </div>
+      <div class="about-media">
+        <img src="kdmimages/bg3.webp" alt="Marketer using a tablet">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FAQ ============== -->
+  <section id="faq" class="section faq">
+    <div class="container">
+      <header class="section-head">
+        <h2>Frequently Asked <span class="highlight">Questions</span></h2>
+      </header>
+      <div class="accordion" id="faqList">
+        <div class="item">
+          <button class="item-head">How fast can you start?</button>
+          <div class="item-body">We typically kick off within 2–3 business days after a quick discovery call.</div>
+        </div>
+        <div class="item">
+          <button class="item-head">Do you work with start‑ups?</button>
+          <div class="item-body">Absolutely. We love working with ambitious start‑ups and SMBs as much as with enterprises.</div>
+        </div>
+        <div class="item">
+          <button class="item-head">What do your packages include?</button>
+          <div class="item-body">From strategy and design to execution and analytics. We tailor to your goals and KPIs.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Contact ============== -->
+  <section id="contact" class="section contact">
+    <div class="container contact-grid">
+      <div class="form-wrap">
+        <h2>Join Us in Creating Something Great</h2>
+        <form id="contactForm" novalidate action="/kdm/kdm/form.php" method="POST">
+          <div class="grid-2">
+            <label>
+              <span>First Name *</span>
+              <input type="text" name="firstName" required />
+            </label>
+            <label>
+              <span>Last Name *</span>
+              <input type="text" name="lastName" required />
+            </label>
+          </div>
+          <div class="grid-2">
+            <label>
+              <span>Email *</span>
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              <span>Phone Number *</span>
+              <input type="tel" name="phone" required />
+            </label>
+          </div>
+          <label class="full">
+            <span>Message *</span>
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-note" id="formMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <aside class="info">
+        <div class="info-card">
+          <h3>Address</h3>
+          <p> 2458 Maple Ridge Drive Los Angeles, CA 90017</p>
+        </div>
+        <div class="info-card">
+          <h3>Contact</h3>
+          <p>Phone: <a href="tel:+919326320295">+91 92222222222</a><br/>
+          Email: <a href="mailto:contact@.in">contact@digitalgrowth.in</a></p>
+        </div>
+        <div class="info-card">
+          <h3>Open Time</h3>
+          <p>Monday – Friday : 10:00 – 20:00</p>
+        </div>
+
+        <div class="socials">
+          <a aria-label="Facebook" href="" class="social"><i class="fi fi-brands-facebook"></i></a>
+          <a aria-label="Instagram" href="" class="social"><i class="fi fi-brands-instagram"></i></a>
+          <a aria-label="LinkedIn" href=""class="social"><i class="fi fi-brands-linkedin"></i></a>
+          <a aria-label="WhatsApp" href="#" class="social"><i class="fi fi-brands-whatsapp"></i></a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============== CTA Banner & Footer ============== -->
+  <section class="cta-banner">
+    <div class="container cta-inner">
+      <h3>Become part of the design revolution</h3>
+      <p>Jump on a membership and start requesting designs right away!</p>
+      <a class="btn btn-accent" href="/kdm/kdm/plans.html">See Pricing <i class="fa-solid fa-circle-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container foot-grid">
+      <div class="foot-brand">
+        <div class="logo -inverse">
+          <img src="kdmimages/kdmlogs.png" alt="" style="height:50px; width:auto; margin-right:8px;">
+          <span class="logo-text"> <b>Digital Media</b></span>
+        </div>
+        <p>Marketing Media — The leading digital agency based in India, working with top‑tier clients, from start‑ups to enterprises.</p>
+      </div>
+      <div class="foot-contact">
+        <p><i class="fi fi-sr-envelope"></i> <a href="mailto:contact@krishnadigitalgrowth.in">contact@digitalgrowth.in</a></p>
+        <p><i class="fi fi-sr-phone-call"></i> <a href="tel:+919326320295">+91 922222222222</a></p>
+       <div class="foot-socials">
+  <a aria-label="Facebook" href=""><i class="fi fi-brands-facebook"></i></a>
+  <a aria-label="Instagram" href=""><i class="fi fi-brands-instagram"></i></a>
+  <a aria-label="LinkedIn" href=""><i class="fi fi-brands-linkedin"></i></a>
+  <a aria-label="WhatsApp" href="#"><i class="fi fi-brands-whatsapp"></i></a>
+</div>
+
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <small>© <span id="year"></span> Digital Marketing Agency. All rights reserved.</small>
+      <a href="/kdm/kdm/kdm.html" class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </footer>
+<script>
+document.querySelectorAll(".services .card").forEach(card => {
+  card.addEventListener("click", (e) => {
+    // avoid double redirect if user clicks the <a> inside
+    if (e.target.tagName.toLowerCase() === "a") return;
+
+    // find the link inside the card
+    const link = card.querySelector("a.arrow");
+    if (link) {
+      window.location.href = link.href;
+    }
+  });
+});
+</script>
+
+
+</body>
+</html>
